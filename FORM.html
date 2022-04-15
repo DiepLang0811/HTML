@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function register_service() {
+
+            var cards = document.forms["registerService"]["cards"].value;
+            var name = document.forms["registerService"]["name"].value;
+            var email = document.forms["registerService"]["email"].value;
+            var phone = document.forms["registerService"]["phone"].value;
+            var companyField = document.forms["registerService"]["company-field"].value;
+            var position = document.forms["registerService"]["position"].value;
+
+            if (cards == null || cards == "") {
+                console.log("Vui lòng chọn danh xưng");
+                return false;
+            } else if (name == null || name == "") {
+                console.log("Vui lòng nhập Họ và Tên");
+                return false;
+            } else if (email|| email == "") {
+                console.log("Vui lòng nhập Email");
+                return false;
+            } else if (phone == null || phone == "") {
+                console.log("Vui lòng nhập số điện thoại");
+                return false;
+            } else if (companyField == null || companyField == "") {
+                console.log("Vui lòng nhập tên Công Ty");
+                return false;
+            } else if (position == null || position == "") {
+                console.log("Vui lòng nhập chức vụ");
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <!-- <input type="password" name = "password" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" title="Invalid password!"/> -->
+    <div>
+        <div id="modalForm" style="position: absolute; z-index: 1040;">
+            <div id="modal-form" role="dialog" aria-describedby="modal-form___BV_modal_body_" class="modal fade show"
+                aria-modal="true" style="display: block; padding-left: 16px;">
+                <div class="modal-dialog modal-md"><span tabindex="0"></span>
+                    <div id="modal-form___BV_modal_content_" tabindex="-1" class="modal-content">
+                        <div id="modal-form___BV_modal_body_" class="modal-body">
+                            <div class="b-overlay-wrap position-relative">
+                                <div class="b-overlay-wrap position-relative">
+                                    <div class="w-100 form">
+                                        <div class="closed"><a class="close close-modal"><img
+                                                    src="/wp-content/uploads/2022/04/close.png" class="img-fluid"></a>
+                                        </div>
+                                        <form name="registerService" class="">
+
+                                            <h2 class="font-weight-bold text-center text-uppercase font-26"
+                                                style="font-size: 30px; text-transform: uppercase;">
+                                                ĐĂNG KÝ
+                                            </h2>
+                                            <h3 class="text-center" style="font-size: 20px; text-transform: uppercase;">
+                                                TRẢI NGHIỆM CHƯƠNG TRÌNH
+                                            </h3>
+                                            <div class="row font-18">
+                                                <div class="col-12">
+                                                    <div
+                                                        class="my-2 w-100 my-lg-3 d-flex justify-content-between phone-number">
+                                                        <select id="cards" name="cards" class="custom-select"
+                                                            style="width: 100%;">
+                                                            <option value="">Chọn danh xưng</option>
+                                                            <option value="796">Anh</option>
+                                                            <option value="798">Chị</option>
+                                                        </select>
+                                                        <div id="genre-valid" class="invalid-feedback">Vui lòng chọn
+                                                            Danh xưng</div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div id="group-name" role="group" class="form-group">
+                                                        <div>
+                                                            <div
+                                                                class="my-2 w-100 my-lg-3 d-flex justify-content-between name">
+                                                                <div class="w-100"><input type="text"
+                                                                        placeholder="Nhập họ và tên" required="required"
+                                                                        aria-required="true" class="form-control"
+                                                                        id="name">
+                                                                    <div id="name-valid" class="invalid-feedback">Vui
+                                                                        lòng nhập Họ và Tên</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div id="group-email" role="group" class="form-group">
+                                                        <div>
+                                                            <div
+                                                                class="my-2 w-100 my-lg-3 d-flex justify-content-between email">
+                                                                <div class="w-100"><input type="email"
+                                                                        placeholder="Nhập email" required="required"
+                                                                        aria-required="true" class="form-control"
+                                                                        id="email">
+                                                                    <div id="email-valid" class="invalid-feedback">Nhập
+                                                                        email sai định dạng:
+                                                                        (abc@gmail.com)</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div id="group-phone" role="group" class="form-group">
+                                                        <div>
+                                                            <div
+                                                                class="my-2 w-100 my-lg-3 d-flex justify-content-between phone-number">
+                                                                <div class="w-100"><input type="text"
+                                                                        placeholder="Nhập số điện thoại (VD: 0900xxxxxxx)"
+                                                                        required="required" min="8" max="12"
+                                                                        aria-required="true" class="form-control"
+                                                                        aria-describedby="phone-valid" id="phone">
+                                                                    <div id="phone-valid" class="invalid-feedback">Nhập
+                                                                        số điện thoại sai định dạng:
+                                                                        (0900xxx)</div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div id="group-company-field" role="group" class="form-group">
+                                                        <div>
+                                                            <div
+                                                                class="my-2 w-100 my-lg-3 d-flex justify-content-between phone-number">
+
+                                                                <div class="w-100"><input id="company-field" type="text"
+                                                                        placeholder="Nhập tên công ty" min="1"
+                                                                        class="input form-control"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-12">
+                                                    <div id="group-position" role="group" class="form-group">
+                                                        <div>
+                                                            <div
+                                                                class="my-2 w-100 my-lg-3 d-flex justify-content-between phone-number">
+
+                                                                <div class="w-100"><input id="position" type="text"
+                                                                        placeholder="Nhập Chức vụ"
+                                                                        class="input form-control"></div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="my-3 d-flex justify-content-center">
+                                                <div class="cover d-flex justify-content-center button-form"
+                                                    style="width: 100%;"><button
+                                                        style="padding: 0.375rem 0.75rem; background-color: #e19239; text-transform: uppercase;"
+                                                        class="btn py-3 w-100 text-center text-uppercase font-weight-bold btn-secondary disabled"
+                                                        onclick="register_service()">
+                                                        Đăng ký tham gia
+                                                    </button> </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div><span tabindex="0"></span>
+                </div>
+            </div>
+            <div id="modal-form___BV_modal_backdrop_" class="modal-backdrop"></div>
+
+        </div>
+
+    </div>
+</body>
+
+</html>
